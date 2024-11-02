@@ -34,10 +34,6 @@ document.getElementById('formTambahKaryawan').addEventListener('submit', functio
         <td>${email}</td>
         <td>${alamat}</td>
         <td>${jabatan}</td>
-        <td>
-            <button class="btn btn-warning btn-sm">Edit</button>
-            <button class="btn btn-danger btn-sm">Hapus</button>
-        </td>
     `;
 
     // Tambahkan row baru ke dalam tabel
