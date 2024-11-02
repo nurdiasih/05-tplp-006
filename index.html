@@ -118,7 +118,44 @@
                 <!-- Karyawan Section -->
                 <section id="karyawanContent" class="collapse mt-4">
                     <h2>Data Karyawan</h2>
-                    <button class="btn btn-primary mb-3">+ Tambah Karyawan</button>
+                    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahKaryawanModal">+ Tambah Karyawan</button>
+                    <!-- Modal Tambah Data Karyawan -->
+<div class="modal fade" id="tambahKaryawanModal" tabindex="-1" aria-labelledby="tambahKaryawanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tambahKaryawanModalLabel">Tambah Data Karyawan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formTambahKaryawan">
+                    <div class="mb-3">
+                        <label for="kodeKaryawan" class="form-label">Kode</label>
+                        <input type="text" class="form-control" id="kodeKaryawan" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="namaKaryawan" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="namaKaryawan" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailKaryawan" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="emailKaryawan" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="alamatKaryawan" class="form-label">Alamat</label>
+                        <input type="text" class="form-control" id="alamatKaryawan" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="jabatanKaryawan" class="form-label">Jabatan</label>
+                        <input type="text" class="form-control" id="jabatanKaryawan" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tambah</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+                    
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -128,7 +165,6 @@
                                 <th>Email</th>
                                 <th>Alamat</th>
                                 <th>Jabatan</th>
-                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -139,10 +175,7 @@
                                 <td>nur@email.com</td>
                                 <td>Jl. Merdeka No.10</td>
                                 <td>Manager</td>
-                                <td>
-                                    <button class="btn btn-warning btn-sm">Edit</button>
-                                    <button class="btn btn-danger btn-sm">Hapus</button>
-                                </td>
+                                
                             </tr>
                             <tr>
                                 <td>2</td>
@@ -151,10 +184,7 @@
                                 <td>fazar@email.com</td>
                                 <td>Jl. Pahlawan No.5</td>
                                 <td>Staff</td>
-                                <td>
-                                    <button class="btn btn-warning btn-sm">Edit</button>
-                                    <button class="btn btn-danger btn-sm">Hapus</button>
-                                </td>
+                               
                             </tr>
                             <tr>
                                 <td>3</td>
@@ -163,10 +193,7 @@
                                 <td>jesi@email.com</td>
                                 <td>Jl. Kebangsaan No.8</td>
                                 <td>Staff</td>
-                                <td>
-                                    <button class="btn btn-warning btn-sm">Edit</button>
-                                    <button class="btn btn-danger btn-sm">Hapus</button>
-                                </td>
+                               
                             </tr>
                             <tr>
                                 <td>4</td>
@@ -175,10 +202,7 @@
                                 <td>badru@email.com</td>
                                 <td>Jl. Gatot No.7</td>
                                 <td>Staff</td>
-                                <td>
-                                    <button class="btn btn-warning btn-sm">Edit</button>
-                                    <button class="btn btn-danger btn-sm">Hapus</button>
-                                </td>
+                                
                             </tr>
 
                         </tr>
@@ -189,10 +213,7 @@
                             <td>Rifki@email.com</td>
                             <td>Jl. Gatot No.24</td>
                             <td>Staff</td>
-                            <td>
-                                <button class="btn btn-warning btn-sm">Edit</button>
-                                <button class="btn btn-danger btn-sm">Hapus</button>
-                            </td>
+                            
                         </tr>
 
                     </tr>
@@ -203,10 +224,7 @@
                         <td>liza@email.com</td>
                         <td>Jl. Jamad No.9</td>
                         <td>Staff</td>
-                        <td>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Hapus</button>
-                        </td>
+                        
                     </tr>
 
                     <tr>
@@ -216,10 +234,7 @@
                         <td>maudy@email.com</td>
                         <td>Jl. Koper No.5</td>
                         <td>Staff</td>
-                        <td>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Hapus</button>
-                        </td>
+                        
                     </tr>
 
                     <tr>
@@ -229,10 +244,7 @@
                         <td>marsih@email.com</td>
                         <td>Jl. Kuningan No.15</td>
                         <td>Staff</td>
-                        <td>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Hapus</button>
-                        </td>
+                        
                     </tr>
                     <tr>
                         <td>9</td>
@@ -241,10 +253,7 @@
                         <td>ilham@email.com</td>
                         <td>Jl. Kuningan No.9</td>
                         <td>Staff</td>
-                        <td>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Hapus</button>
-                        </td>
+                        
                     </tr>
 
                     <tr>
@@ -254,10 +263,7 @@
                         <td>aris@email.com</td>
                         <td>Jl. Koper No.3</td>
                         <td>Staff</td>
-                        <td>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Hapus</button>
-                        </td>
+                        
                     </tr>
                         </tbody>
                     </table>
@@ -266,7 +272,35 @@
                 <!-- Jabatan Section -->
 <section id="jabatanContent" class="collapse mt-4">
     <h2>Data Jabatan</h2>
-    <button class="btn btn-primary mb-3">+ Tambah Jabatan</button>
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahJabatanModal">+ Tambah jabatan</button>
+     <!-- Modal Tambah Data Jabatan -->
+<div class="modal fade" id="tambahJabatanModal" tabindex="-1" aria-labelledby="tambahJabatanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tambahJabatanModalLabel">Tambah Data Jabatan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formTambahJabatan">
+                    <div class="mb-3">
+                        <label for="kodeJabatan" class="form-label">Kode</label>
+                        <input type="text" class="form-control" id="kodeJabatan" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="namaJabatan" class="form-label">Nama Jabatan</label>
+                        <input type="text" class="form-control" id="namaJabatan" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="gajijabatan" class="form-label">Gaji</label>
+                        <input type="gaji" class="form-control" id="gajiJabatan" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tambah</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -274,7 +308,7 @@
                 <th>Kode Jabatan</th>
                 <th>Nama Jabatan</th>
                 <th>Gaji</th>
-                <th>Aksi</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -283,20 +317,14 @@
                 <td>JB001</td>
                 <td>Manager</td>
                 <td>Rp 10,000,000</td>
-                <td>
-                    <button class="btn btn-warning btn-sm">Edit</button>
-                    <button class="btn btn-danger btn-sm">Hapus</button>
-                </td>
+                
             </tr>
             <tr>
                 <td>2</td>
                 <td>JB002</td>
                 <td>Staff</td>
                 <td>Rp 5,000,000</td>
-                <td>
-                    <button class="btn btn-warning btn-sm">Edit</button>
-                    <button class="btn btn-danger btn-sm">Hapus</button>
-                </td>
+                
             </tr>
 
             <tr>
@@ -304,10 +332,7 @@
                 <td>JB003</td>
                 <td>Staff</td>
                 <td>Rp 3,000,000</td>
-                <td>
-                    <button class="btn btn-warning btn-sm">Edit</button>
-                    <button class="btn btn-danger btn-sm">Hapus</button>
-                </td>
+                
             </tr>
 
             <tr>
@@ -315,10 +340,7 @@
                 <td>JB004</td>
                 <td>Staff</td>
                 <td>Rp 8,000,000</td>
-                <td>
-                    <button class="btn btn-warning btn-sm">Edit</button>
-                    <button class="btn btn-danger btn-sm">Hapus</button>
-                </td>
+                
             </tr>
 
         </tbody>
@@ -329,14 +351,38 @@
 <!-- Divisi Section -->
 <section id="divisiContent" class="collapse mt-4">
     <h2>Data Divisi</h2>
-    <button class="btn btn-primary mb-3">+ Tambah Divisi</button>
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahDivisiModal">+ Tambah Divisi</button>
+    <!-- Modal Tambah Data Divisi -->
+    <div class="modal fade" id="tambahDivisiModal" tabindex="-1" aria-labelledby="tambahDivisiModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tambahDivisiModalLabel">Tambah Data Divisi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formTambahDivisi">
+                        <div class="mb-3">
+                            <label for="kodeDivisi" class="form-label">Kode</label>
+                            <input type="text" class="form-control" id="kodeDivisi" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="namaDivisi" class="form-label">Nama Divisi</label>
+                            <input type="text" class="form-control" id="namaDivisi" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>No.</th>
                 <th>Kode Divisi</th>
                 <th>Nama Divisi</th>
-                <th>Aksi</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -344,39 +390,27 @@
                 <td>1</td>
                 <td>DV001</td>
                 <td>HR</td>
-                <td>
-                    <button class="btn btn-warning btn-sm">Edit</button>
-                    <button class="btn btn-danger btn-sm">Hapus</button>
-                </td>
+                
             </tr>
             <tr>
                 <td>2</td>
                 <td>DV002</td>
                 <td>HR</td>
-                <td>
-                    <button class="btn btn-warning btn-sm">Edit</button>
-                    <button class="btn btn-danger btn-sm">Hapus</button>
-                </td>
+                
             </tr>
 
             <tr>
                 <td>3</td>
                 <td>DV003</td>
                 <td>OB</td>
-                <td>
-                    <button class="btn btn-warning btn-sm">Edit</button>
-                    <button class="btn btn-danger btn-sm">Hapus</button>
-                </td>
+                
             </tr>
 
             <tr>
                 <td>4</td>
                 <td>DV004</td>
                 <td>IT</td>
-                <td>
-                    <button class="btn btn-warning btn-sm">Edit</button>
-                    <button class="btn btn-danger btn-sm">Hapus</button>
-                </td>
+               
             </tr>
         </tbody>
     </table>
@@ -386,7 +420,40 @@
                 <!-- Absensi Section -->
                 <section id="absensiContent" class="collapse mt-4">
                     <h2>Data Absensi</h2>
-                    <button class="btn btn-primary mb-3">+ Tambah Absensi</button>
+                    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahAbsensiModal">+ Tambah Absensi</button>
+    <!-- Modal Tambah Data Absensi -->
+<div class="modal fade" id="tambahAbsensiModal" tabindex="-1" aria-labelledby="tambahAbsensiModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tambahAbsensiModalLabel">Tambah Data Absensi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formTambahAbsensi">
+                    <div class="mb-3">
+                        <label for="namaAbsensi" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="namaAbsensi" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tanggalAbsensi" class="form-label">Tanggal</label>
+                        <input type="tanggal" class="form-control" id="tanggalAbsensi" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="statusAbsensi" class="form-label">Status</label>
+                        <input type="text" class="form-control" id="statusAbsensi" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="keteranganAbsensi" class="form-label">Absensi</label>
+                        <input type="text" class="form-control" id="keteranganAbsensi" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tambah</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -426,7 +493,39 @@
                 <!-- Izin Section -->
                 <section id="izinContent" class="collapse mt-4">
                     <h2>Data Izin</h2>
-                    <button class="btn btn-primary mb-3">+ Tambah Izin</button>
+                    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahIzinModal">+ Tambah Izin</button>
+                    <!-- Modal Tambah Data Izin -->
+                    <div class="modal fade" id="tambahIzinModal" tabindex="-1" aria-labelledby="tambahIzinModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="tambahIzinModalLabel">Tambah Data Izin</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="formTambahIzin">
+                                        <div class="mb-3">
+                                            <label for="namaIzin" class="form-label">Nama</label>
+                                            <input type="text" class="form-control" id="namaIzin" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="tanggalIzin" class="form-label">Tanggal</label>
+                                            <input type="tanggal" class="form-control" id="tanggalIzin" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="durasiIzin" class="form-label">Durasi</label>
+                                            <input type="text" class="form-control" id="durasiIzin" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="keteranganIzin" class="form-label">Keterangan</label>
+                                            <input type="text" class="form-control" id="keteranganIzin" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Tambah</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -459,7 +558,44 @@
                 <!-- Lembur Section -->
                 <section id="lemburContent" class="collapse mt-4">
                     <h2>Data Lembur</h2>
-                    <button class="btn btn-primary mb-3">+ Tambah Lembur</button>
+                    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahLemburModal">+ Tambah Lembur</button>
+                    <!-- Modal Tambah Data Lembur -->
+<div class="modal fade" id="tambahLemburModal" tabindex="-1" aria-labelledby="tambahLemburModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tambahLemburModalLabel">Tambah Data Lembur</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formTambahLembur">
+                    <div class="mb-3">
+                        <label for="namaLembur" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="namaLembur" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tanggalLembur" class="form-label">Tanggal Lembur</label>
+                        <input type="text" class="form-control" id="tanggalLembur" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="jammulaiLembur" class="form-label">Jam Mulai</label>
+                        <input type="jam mulai" class="form-control" id="jammulaiLembur" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="jamselesaiLembur" class="form-label">Jam Selesai</label>
+                        <input type="text" class="form-control" id="jamselesaiLembur" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="keteranganLembur" class="form-label">Keterangan</label>
+                        <input type="text" class="form-control" id="keteranganLembur" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tambah</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
                     <table class="table table-striped">
                         <thead>
                             <tr>
