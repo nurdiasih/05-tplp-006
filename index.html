@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Manajemen Karyawan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .menu-logo {
+            width: 20px; /* Ukuran logo */
+            height: auto; /* Sesuaikan tinggi logo */
+            margin-right: 8px; /* Jarak antara logo dan teks */
+        }
+        .collapse {
+            display: none; /* Awalnya sembunyikan semua konten */
+        }
+        .collapse.show {
+            display: block; /* Tampilkan jika ada class 'show' */
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-primary" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 text-white">
+                <img src="img/UNPAM_logo1.png" alt="Logo Universitas Pamulang" style="width: 80px; height: auto;"> <!-- Ukuran logo -->
+                <div>Universitas Pamulang</div>
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="#dashboard" class="list-group-item list-group-item-action bg-primary text-white">
+                    <img src="img/home.png" alt="Logo" class="menu-logo"> Dashboard
+                </a>
+                <div class="submenu">
+                    <a href="#karyawanMenu" class="list-group-item list-group-item-action bg-primary text-white" data-bs-toggle="collapse" aria-expanded="false">
+                        <img src="img/menu.png" alt="Logo" class="menu-logo"> Menu Karyawan
+                    </a>
+                    <div id="karyawanMenu" class="collapse list-group">
+                        <a href="#karyawan" class="list-group-item list-group-item-action bg-primary text-white ps-5">
+                            <img src="img/karyawan.png" alt="Logo" class="menu-logo"> Karyawan
+                        </a>
+                        <a href="#jabatan" class="list-group-item list-group-item-action bg-primary text-white ps-5">
+                            <img src="img/jabatan.png" alt="Logo" class="menu-logo"> Jabatan
+                        </a>
+                        <a href="#divisi" class="list-group-item list-group-item-action bg-primary text-white ps-5">
+                            <img src="img/divisi.png" alt="Logo" class="menu-logo"> Divisi
+                        </a>
+                    </div>
+                </div>
+                <div class="submenu">
+                    <a href="#absensiMenu" class="list-group-item list-group-item-action bg-primary text-white" data-bs-toggle="collapse" aria-expanded="false">
+                        <img src="img/absensi.png" alt="Logo" class="menu-logo"> Menu Absensi
+                    </a>
+                    <div id="absensiMenu" class="collapse list-group">
+                        <a href="#absensi" class="list-group-item list-group-item-action bg-primary text-white ps-5">
+                            <img src="img/absen.png" alt="Logo" class="menu-logo"> Absensi
+                        </a>
+                        <a href="#izin" class="list-group-item list-group-item-action bg-primary text-white ps-5">
+                            <img src="img/izin.png" alt="Logo" class="menu-logo"> Izin
+                        </a>
+                        <a href="#lembur" class="list-group-item list-group-item-action bg-primary text-white ps-5">
+                            <img src="img/lembur.png" alt="Logo" class="menu-logo"> Lembur
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content Wrapper -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+               
+                <div class="ml-auto">Welcome, Nurdiasih</div>
+            </nav>
+
+            <div class="container-fluid">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="mt-4">
+                    <h2 style="font-size: 36px; font-weight: bold;">Sistem Informasi Manajemen Karyawan</h2> <!-- Kalimat di atas Dashboard -->
+    <h1>Admin Dashboard</h1>
+                    <div class="row my-4">
+                        <div class="col-md-3">
+                            <div class="card text-white bg-info mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Data Pegawai</h5>
+                                    <p class="card-text">10</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-white bg-success mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Absensi Hari Ini</h5>
+                                    <p class="card-text">7</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-white bg-warning mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Izin Menunggu</h5>
+                                    <p class="card-text">2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-white bg-danger mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lembur Menunggu</h5>
+                                    <p class="card-text">2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Karyawan Section -->
+                <section id="karyawanContent" class="collapse mt-4">
+                    <h2>Data Karyawan</h2>
+                    <button class="btn btn-primary mb-3">+ Tambah Karyawan</button>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Kode</th>
+                                <th>Nama</th>
+                                <th>Email</th>
+                                <th>Alamat</th>
+                                <th>Jabatan</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>KG001</td>
+                                <td>Nurdiasih</td>
+                                <td>nur@email.com</td>
+                                <td>Jl. Merdeka No.10</td>
+                                <td>Manager</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm">Edit</button>
+                                    <button class="btn btn-danger btn-sm">Hapus</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>KG002</td>
+                                <td>Fazar Nur Hikmah</td>
+                                <td>fazar@email.com</td>
+                                <td>Jl. Pahlawan No.5</td>
+                                <td>Staff</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm">Edit</button>
+                                    <button class="btn btn-danger btn-sm">Hapus</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>KG003</td>
+                                <td>Jaisy Marisa</td>
+                                <td>jesi@email.com</td>
+                                <td>Jl. Kebangsaan No.8</td>
+                                <td>Staff</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm">Edit</button>
+                                    <button class="btn btn-danger btn-sm">Hapus</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>KG004</td>
+                                <td>Muhammad Badru</td>
+                                <td>badru@email.com</td>
+                                <td>Jl. Gatot No.7</td>
+                                <td>Staff</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm">Edit</button>
+                                    <button class="btn btn-danger btn-sm">Hapus</button>
+                                </td>
+                            </tr>
+
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>KG005</td>
+                            <td>Abdu Rifki</td>
+                            <td>Rifki@email.com</td>
+                            <td>Jl. Gatot No.24</td>
+                            <td>Staff</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">Edit</button>
+                                <button class="btn btn-danger btn-sm">Hapus</button>
+                            </td>
+                        </tr>
+
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>KG006</td>
+                        <td>Nurhaliza</td>
+                        <td>liza@email.com</td>
+                        <td>Jl. Jamad No.9</td>
+                        <td>Staff</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Edit</button>
+                            <button class="btn btn-danger btn-sm">Hapus</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td>KG007</td>
+                        <td>Maudy Putri</td>
+                        <td>maudy@email.com</td>
+                        <td>Jl. Koper No.5</td>
+                        <td>Staff</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Edit</button>
+                            <button class="btn btn-danger btn-sm">Hapus</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td>KG008</td>
+                        <td>Sumarsih</td>
+                        <td>marsih@email.com</td>
+                        <td>Jl. Kuningan No.15</td>
+                        <td>Staff</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Edit</button>
+                            <button class="btn btn-danger btn-sm">Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>KG009</td>
+                        <td>Muhammad Ilham</td>
+                        <td>ilham@email.com</td>
+                        <td>Jl. Kuningan No.9</td>
+                        <td>Staff</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Edit</button>
+                            <button class="btn btn-danger btn-sm">Hapus</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td>KG0010</td>
+                        <td>Kharis</td>
+                        <td>aris@email.com</td>
+                        <td>Jl. Koper No.3</td>
+                        <td>Staff</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Edit</button>
+                            <button class="btn btn-danger btn-sm">Hapus</button>
+                        </td>
+                    </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Jabatan Section -->
+<section id="jabatanContent" class="collapse mt-4">
+    <h2>Data Jabatan</h2>
+    <button class="btn btn-primary mb-3">+ Tambah Jabatan</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Kode Jabatan</th>
+                <th>Nama Jabatan</th>
+                <th>Gaji</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>JB001</td>
+                <td>Manager</td>
+                <td>Rp 10,000,000</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm">Hapus</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>JB002</td>
+                <td>Staff</td>
+                <td>Rp 5,000,000</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm">Hapus</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>JB003</td>
+                <td>Staff</td>
+                <td>Rp 3,000,000</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm">Hapus</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>JB004</td>
+                <td>Staff</td>
+                <td>Rp 8,000,000</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm">Hapus</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+
+<!-- Divisi Section -->
+<section id="divisiContent" class="collapse mt-4">
+    <h2>Data Divisi</h2>
+    <button class="btn btn-primary mb-3">+ Tambah Divisi</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Kode Divisi</th>
+                <th>Nama Divisi</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>DV001</td>
+                <td>HR</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm">Hapus</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>DV002</td>
+                <td>HR</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm">Hapus</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>DV003</td>
+                <td>OB</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm">Hapus</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>DV004</td>
+                <td>IT</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm">Hapus</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+                <!-- Absensi Section -->
+                <section id="absensiContent" class="collapse mt-4">
+                    <h2>Data Absensi</h2>
+                    <button class="btn btn-primary mb-3">+ Tambah Absensi</button>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Karyawan</th>
+                                <th>Tanggal</th>
+                                <th>Status</th>
+                                <th>Keterangan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nurdiasih</td>
+                                <td>2024-11-01</td>
+                                <td>Hadir</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Fazar Nur Hikmah</td>
+                                <td>2024-11-01</td>
+                                <td>Izin</td>
+                                <td>Sakit</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Jaisy Marisa</td>
+                                <td>2024-11-01</td>
+                                <td>Tidak Hadir</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Izin Section -->
+                <section id="izinContent" class="collapse mt-4">
+                    <h2>Data Izin</h2>
+                    <button class="btn btn-primary mb-3">+ Tambah Izin</button>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Karyawan</th>
+                                <th>Tanggal Izin</th>
+                                <th>Durasi</th>
+                                <th>Keterangan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Fazar Nur Hikmah</td>
+                                <td>2024-10-30</td>
+                                <td>1 Hari</td>
+                                <td>Sakit</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Nurdiasih</td>
+                                <td>2024-10-31</td>
+                                <td>2 Hari</td>
+                                <td>Keperluan Pribadi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Lembur Section -->
+                <section id="lemburContent" class="collapse mt-4">
+                    <h2>Data Lembur</h2>
+                    <button class="btn btn-primary mb-3">+ Tambah Lembur</button>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Karyawan</th>
+                                <th>Tanggal Lembur</th>
+                                <th>Jam Mulai</th>
+                                <th>Jam Selesai</th>
+                                <th>Keterangan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nurdiasih</td>
+                                <td>2024-10-29</td>
+                                <td>17:00</td>
+                                <td>19:00</td>
+                                <td>Proyek Mendesak</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Fazar Nur Hikmah</td>
+                                <td>2024-10-30</td>
+                                <td>16:30</td>
+                                <td>18:30</td>
+                                <td>Penyelesaian Laporan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+       ...
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
